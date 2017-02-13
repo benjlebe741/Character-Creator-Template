@@ -19,10 +19,19 @@ namespace CharacterCreator
 
         private void ViewScreen_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < MainForm.characterDB.Count(); i++)
+            // add each Characters name to the dropdown box
+            foreach (Character c in MainForm.characterDB)
             {
-                heroSelect.Items.Add(MainForm.characterDB[i].name);
+                heroSelect.Items.Add(c.name);
             }
+
+            // below is a for loop that does the exact same thing as
+            // the foreach loop above. It is here for reference only
+            //
+            //for (int i = 0; i < MainForm.characterDB.Count(); i++)
+            //{
+            //    heroSelect.Items.Add(MainForm.characterDB[i].name);
+            //}
         }
 
         private void exitButton_Click(object sender, EventArgs e)
