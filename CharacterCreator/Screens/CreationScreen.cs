@@ -112,15 +112,11 @@ namespace CharacterCreator
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            // used to temporarly hold values that will then be used to creat object
-            string dex, str, hea;
-
-            //TODO: get name from input and set dex, str, and hea
+            //TODO: get name from input 
 
             //TODO: create character object and place it characterDB
 
             //TODO: close this screen and open the Home Screen
-
         }
 
 
