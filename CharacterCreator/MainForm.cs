@@ -12,14 +12,30 @@ namespace CharacterCreator
 {
     public partial class MainForm : Form
     {
-        //TODO: create a object list, (call it characterDB), to hold your character information.
-        //NOTE: You will need to create the Character class first.
+        //List to hold character information.
+        public static List<Character> characterDB = new List<Character>();
 
         public MainForm()
         {
             InitializeComponent();
+            DisplayScreen(this, new HomeScreen());
+        }
 
-            //TODO: create code to launch the HomeScreen when the program starts
+        public static void DisplayScreen(object sender, UserControl next)
+        {
+            Form f;
+            if (sender is Form)
+            {
+                f = (Form)sender;
+            }
+            else
+            {
+                UserControl current = (UserControl)sender;
+                f = current.FindForm();
+                f.Controls.Remove(current);
+            }
+            next.Location = new Point((f.Width - next.Width) / 2, (f.Height - next.Height) / 2);
+            f.Controls.Add(next);
         }
     }
 }

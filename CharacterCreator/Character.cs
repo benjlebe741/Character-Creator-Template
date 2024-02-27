@@ -7,9 +7,10 @@ namespace CharacterCreator
 {
     public class Character
     {
-        public string name, charClass, dexterity, strength, health, perk;
+        public string name, charClass, perk;
+        public int dexterity, strength, health; 
 
-        public Character(string _name, string _charClass, string _dexterity, string _strength, string _health, string _perk)
+        public Character(string _name, string _charClass, int _dexterity, int _strength, int _health, string _perk)
         {
             name = _name;
             charClass = _charClass;

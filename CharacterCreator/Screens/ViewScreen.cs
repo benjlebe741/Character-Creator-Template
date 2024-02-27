@@ -24,32 +24,20 @@ namespace CharacterCreator
             {
                 heroSelect.Items.Add(c.name);
             }
-
-            // below is a for loop that does the exact same thing as
-            // the foreach loop above. It is here for reference only
-            //
-            //for (int i = 0; i < MainForm.characterDB.Count(); i++)
-            //{
-            //    heroSelect.Items.Add(MainForm.characterDB[i].name);
-            //}
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
-
-            HomeScreen hs = new HomeScreen();
-            f.Controls.Add(hs);
+            MainForm.DisplayScreen(this, new HomeScreen());
         }
 
         private void heroSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             nameOutput.Text = MainForm.characterDB[heroSelect.SelectedIndex].name;
             classOutput.Text = MainForm.characterDB[heroSelect.SelectedIndex].charClass;
-            dexterityOutput.Text = MainForm.characterDB[heroSelect.SelectedIndex].dexterity;
-            strengthOutput.Text = MainForm.characterDB[heroSelect.SelectedIndex].strength;
-            healthOutput.Text = MainForm.characterDB[heroSelect.SelectedIndex].health;
+            dexterityOutput.Text = Convert.ToString(MainForm.characterDB[heroSelect.SelectedIndex].dexterity);
+            strengthOutput.Text = Convert.ToString(MainForm.characterDB[heroSelect.SelectedIndex].strength);
+            healthOutput.Text = Convert.ToString(MainForm.characterDB[heroSelect.SelectedIndex].health);
             perkOutput.Text = MainForm.characterDB[heroSelect.SelectedIndex].perk;
 
             if (MainForm.characterDB[heroSelect.SelectedIndex].charClass == "Fighter")

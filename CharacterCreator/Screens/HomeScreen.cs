@@ -19,17 +19,20 @@ namespace CharacterCreator
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            //TODO: create code to close this screen and show the CreationScreen
+            //Close this screen and show the CreationScreen
+            MainForm.DisplayScreen(this, new CreationScreen());
         }
 
         private void viewButton_Click(object sender, EventArgs e)
         {
-            //TODO: create code to close this screen and show the ViewScreen
+            //Close this screen and show the ViewScreen
+            MainForm.DisplayScreen(this, new ViewScreen());
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            //TODO: create code to close whole program (Application.Exit())
+            //Close whole program
+            Application.Exit();
         }
     }
 }
